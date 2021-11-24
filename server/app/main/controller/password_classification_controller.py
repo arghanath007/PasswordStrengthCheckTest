@@ -23,7 +23,9 @@ class HomePage(Resource):
         status = 200
         message = ""
         color = ""
+        print(message)
         return make_response(render_template("app.html", status = status, message = message, color = color), 200,headers)
+
     
     def post(self):
         headers = {'Content-Type': 'text/html'}
@@ -40,5 +42,7 @@ class HomePage(Resource):
 
         else:
             color = 'danger'
+
+        print(message)
         
         return make_response(render_template("app.html", message = message, status = status, color = color), 200,headers)

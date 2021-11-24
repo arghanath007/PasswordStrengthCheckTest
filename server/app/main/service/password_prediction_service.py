@@ -28,7 +28,7 @@ def load_saved_artifacts():
 
 def password_strength_predict(data):
     try:
-        
+
         password = data['password']
         
         pred_dict, model = load_saved_artifacts()  
@@ -42,4 +42,4 @@ def password_strength_predict(data):
         
 
     except Exception as e:
-        return apiResponse(False, 'Error occurred', None, str(e)), 500
+        return apiResponse(False, 'Error Occurred', None, str(e)), 500
