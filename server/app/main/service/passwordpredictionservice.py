@@ -26,7 +26,7 @@ def load_saved_artifacts():
 
     return pred_dict, model
 
-def password_strength_predict(data):
+def passwordstrengthpredict(data):
     try:
 
         password = data['password']

@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["conv", "sklearn", "Tfidf", "Vectorizer", "xgbclassifier"]
+  "cSpell.words": [
+    "conv",
+    "passwordclassificationdto",
+    "sklearn",
+    "Tfidf",
+    "Vectorizer",
+    "xgbclassifier"
+  ]
 }

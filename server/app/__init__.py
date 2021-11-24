@@ -12,6 +12,6 @@ version='1.0',
 description='Output "0" means the password is weak, "1" means the password is average/medium, "2" means the password is good/strong', 
 authorizations=authorizations)
 
-from app.main.controller.password_classification_controller import  api as password_clf_ns
+from app.main.controller.passwordclassificationcontroller import  api as password_clf_ns
 
 api.add_namespace(password_clf_ns,path='/password')

@@ -1,22 +1,22 @@
 from flask_restx import Resource
-from app.main.service.password_prediction_service import password_strength_predict
-from app.main.util.password_classification_dto import PasswordClassificationDto
+from app.main.service.passwordpredictionservice import passwordstrengthpredict
+from app.main.util.passwordclassificationdto import PasswordClassificationDto
 from flask import request
 from flask import render_template, make_response
 
 api = PasswordClassificationDto.api 
 _password_pred = PasswordClassificationDto.password_pred
 
-@api.route('/predict')
-class PasswordPrediction(Resource):
-    @api.doc('Password Strength Prediction')
-    @api.expect(_password_pred) 
-    def post(self):
-        """Password Strength Prediction"""
-        return password_strength_predict(request.json)
+# @api.route('/predict')
+# class PasswordPrediction(Resource):
+#     @api.doc('Password Strength Prediction')
+#     @api.expect(_password_pred) 
+#     def post(self):
+#         """Password Strength Prediction"""
+#         return passwordstrengthpredict(request.json)
 
 
-@api.route('/home')
+@api.route('/checker')
 class HomePage(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
@@ -32,7 +32,7 @@ class HomePage(Resource):
         message = ""
         data = {}
         data['password'] = request.form['password'] 
-        response, status = password_strength_predict(data)
+        response, status = passwordstrengthpredict(data)
         message = response['message']
         strength = response['data']
         if strength == '2':
